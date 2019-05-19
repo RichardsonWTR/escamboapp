@@ -1,5 +1,5 @@
 class Site::HomeController < ApplicationController
-  layout "sitepadrao"
+  layout "site"
   
   def index
   end
