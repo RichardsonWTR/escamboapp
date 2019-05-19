@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
+  namespace :site do
+    get 'home/index'
+  end
+
   namespace :backoffice do
     get 'dashboard/index'
   end
 
   devise_for :admins
   devise_for :members
-  get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home#index'
+   root 'site/home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
