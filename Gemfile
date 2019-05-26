@@ -67,3 +67,4 @@ gem 'devise-i18n'
 # bootstrap_sb_admin_base_v2 views is using FA 5 syntax (fas), but the installed version is 4.7 (uses fa syntax)
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-bootstrap', '4.3.1', source: 'https://rails-assets.org'
+gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
