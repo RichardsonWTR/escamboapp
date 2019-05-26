@@ -18,7 +18,17 @@ class Backoffice::CategoriesController < BackofficeController
   end
 
   def edit
+    @category = Category.find(params[:id])
+  end
 
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(category_params)
+      redirect_to backoffice_categories_path
+      flash[:notice] = "Categoria atualizada com sucesso"
+    else
+      render "edit"
+    end
   end
 
   private
