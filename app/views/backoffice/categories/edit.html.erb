@@ -7,26 +7,25 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Categorias
+                            Atualizando categoria
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="col-lg-6">
-                            <div class="panel-body">
-                            Atualizando categoria
-                            <%= form_for [:backoffice, @category] do |form| %>
-                                <div class="form-group">
-                                    <%# <input class="form-control" placeholder="Enter text"> %>
-                                    <%= form.text_field :description, class: "form-control", placeholder: "Ex: Animais/Pets"%>
-                                </div>
+                        <div class="panel-body">
+                            <div class="col-lg-6">
+                                <%= form_for [:backoffice, @category] do |form| %>
+                                    <div class="form-group">
+                                        <label>Descrição</label>
+                                        <%= form.text_field :description, class: "form-control", placeholder: "Ex: Animais/Pets", required: "required"%>
+                                    </div>
 
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Salvar</button>
-                                </div>
-                            <% end %>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-default">Salvar</button>
+                                    </div>
+                                <% end %>
                             </div>
-                            <!-- /.panel-body -->
+                            <!-- /.col-lg-6 -->
                         </div>
-                        <!-- /.col-lg-6 -->
+                        <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
 
