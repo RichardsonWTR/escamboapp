@@ -23,3 +23,7 @@ categories.each do |cat|
   Category.find_or_create_by(description: cat)
 end
 puts 'Cadastrando as categorias...[DONE]'
+
+puts 'Cadastrando administradores...'
+  Admin.create(email: "master@admins.com",password: "123123", password_confirmation: "123123")
+puts 'Cadastrando administradores...[DONE]'
