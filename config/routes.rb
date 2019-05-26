@@ -3,14 +3,16 @@ Rails.application.routes.draw do
   get 'backoffice', to: 'backoffice/dashboard#index'
   namespace :backoffice do
     resources :categories, except: [:destroy, :show]
+    resources :admins, except: [:show, :destroy]
     get 'categories', to: 'categories#index'
+    get 'admins', to: 'admins#index'
   end
 
   namespace :site do
     get 'home', to: 'home#index'
   end
 
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations]
   devise_for :members
 
   # The priority is based upon order of creation: first created -> highest priority.
