@@ -5,10 +5,10 @@
             <div class="col-lg-12">
                 <h1 class="page-header">Categories</h1>
 
-                    <% if flash[:notice] %>
+                    <% if notice %> <%# Tip: notice is a shorthand for flash[:notice] %>
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                            <%= flash[:notice] %>
+                            <%= notice %>
                         </div>
                     <% end %>
 
