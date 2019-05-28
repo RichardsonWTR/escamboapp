@@ -68,3 +68,5 @@ gem 'devise-i18n'
 gem 'bootstrap_sb_admin_base_v2'
 gem 'rails-assets-bootstrap', '4.3.1', source: 'https://rails-assets.org'
 gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
