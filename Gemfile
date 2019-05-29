@@ -70,3 +70,5 @@ gem 'rails-assets-bootstrap', '4.3.1', source: 'https://rails-assets.org'
 gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
 # A library for generating fake data such as names, addresses, and phone numbers.
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+#
+gem 'rails-assets-bootbox', '5.1.3', source: 'https://rails-assets.org'
