@@ -56,6 +56,9 @@ group :development do
 
   # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
   gem 'rails-erd'
+
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 # Flexible authentication solution for Rails with Warden. 
@@ -66,9 +69,9 @@ gem 'devise-i18n'
 # TODO: Check if there is a possible way to force bootstrap_sb_admin_base_v2 to use font awesome 5 instead of 4.7.0.5 
 # bootstrap_sb_admin_base_v2 views is using FA 5 syntax (fas), but the installed version is 4.7 (uses fa syntax)
 gem 'bootstrap_sb_admin_base_v2'
-gem 'rails-assets-bootstrap', '4.3.1', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', '0.4.2', source: 'https://rails-assets.org'
-# A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-#
-gem 'rails-assets-bootbox', '5.1.3', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap', '4.3.1'
+  gem 'rails-assets-notifyjs', '0.4.2'
+  # Bootbox.js
+  gem 'rails-assets-bootbox', '5.1.3'
+end
