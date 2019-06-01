@@ -44,14 +44,14 @@
             <ul class="nav" id="side-menu">
                 <li>
                     <%= link_to backoffice_categories_path do %>
-                        <i class="fa fa-th-list fa-fw"></i> Categorias
+                        <i class="fa fa-th-list fa-fw"></i> <%= Category.model_name.human(count: 2) %>
                     <% end%>
                 </li>
             </ul>
             <ul class="nav" id="side-menu">
                 <li>
                     <%= link_to backoffice_admins_path do %>
-                        <i class="fa fa-users fa-fw"></i> Administradores
+                        <i class="fa fa-users fa-fw"></i> <%= Admin.model_name.human(count: 2) %>
                     <% end%>
                 </li>
             </ul>

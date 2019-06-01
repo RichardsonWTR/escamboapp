@@ -5,18 +5,22 @@
 // Override data-confirm (javascript confirm box) of Rails with a custom confirm box
 $.rails.allowAction = function(element){
     var message =  element.attr('data-confirm');
+    var title = element.attr('data-title');
+    var answer_yes = element.attr('data-answer-yes');
+    var answer_no = element.attr('data-answer-no');
+    console.log(answer_yes, answer_no);
     if(!message) {return true;}
 
     var opts={
-        title: 'Confirmação',
+        title: title,
         message: message,
         buttons: {
             confirm:{
-                label: 'Sim',
+                label: answer_yes,
                 className: 'btn-success'
             },
             cancel: {
-                label: 'Não',
+                label: answer_no,
                 className: 'btn-danger'
             }
         },

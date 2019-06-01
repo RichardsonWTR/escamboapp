@@ -1,0 +1,14 @@
+'en':
+  messages:
+    confirm: Are you sure?
+    confirm_with: Do you really want to remove %{item}?
+    listing: Listing %{model}
+    editing: Editing  %{model}
+    new: New %{model}
+    errors: occurred...
+    created: Item created succesfully!
+    updated: Item updated succesfully!
+    destroyed: Item deleted succesfully!
+    wait_a_sec: Wait a second!
+    answer_yes: 'Yes'
+    answer_no: 'No'

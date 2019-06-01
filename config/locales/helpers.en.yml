@@ -1,0 +1,14 @@
+en:
+  helpers:
+    submit:
+      category:
+#        create: Create %{model}
+#        update: Update %{model}
+    placeholder:
+      category:
+        description: "Ex: Animals/Pets"
+      admins:
+#       name: "Ex: João da Silva"
+#       email: "Ex: user@company.com"
+#       password: "Ex: Algo mais difícil que 123456"
+#       password_confirmation: "Confirmação da senha"

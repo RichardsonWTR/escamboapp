@@ -1,0 +1,45 @@
+'en':
+  activerecord:
+    models:
+      member:
+        one: User
+        other: Users
+      admin:
+        one: Administrator
+        other: Administrators
+      category:
+        one: Category
+        other: Categories
+      ad:
+        one: Ad
+        other: Ads
+    attributes:
+      member:
+        id: Id
+        created_at: Created at
+        updated_at: Updated at
+        email: E-mail
+        password: Password
+        password_confirmation: Confirm password
+      admin:
+        id: Id
+        created_at: Created at
+        updated_at: Updated at
+        email: E-mail
+        password: Password
+        password_confirmation: Confirm password
+        name: Name
+        role: Access level
+      category:
+        id: Id
+        created_at: Created at
+        updated_at: Updated at
+        description: Description
+      ad:
+        id: Id
+        created_at: Created at
+        updated_at: Updated at
+        title: Title
+        description: Description
+        member_id: Member id
+        category_id: Category id

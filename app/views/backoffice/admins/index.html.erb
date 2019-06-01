@@ -1,8 +1,8 @@
-<h1 class="page-header">Admins</h1>
+<h1 class="page-header"><%= @admins.model_name.human(count: 2) %></h1>
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Listando Categorias
+        <%= t('messages.listing',model: @admins.model_name.human(count: 2)) %>
         <%= link_to new_backoffice_admin_path, class:"btn btn-success btn-circle pull-right", style: "margin-top:-5px" do%>
         <i class="fa fa-plus "></i>
         <% end %>
@@ -14,10 +14,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>Nível de Acesso</th>
-                        <th style="width:10%">Ações</th>
+                        <th><%= @admins.model.human_attribute_name('name') %></th>
+                        <th><%= @admins.model.human_attribute_name('email') %></th>
+                        <th><%= @admins.model.human_attribute_name('role') %></th>
+                        <th style="width:10%"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +38,12 @@
                                 <% end %>
                             <% else %>
                                 <%= link_to backoffice_admin_path(admin), method: :delete, class: "btn btn-danger btn-circle", 
-                                data: { confirm: "Confirma a exclusão deste usuário administrador?" } do %>
+                                data: { 
+                                        title: t('messages.wait_a_sec'),
+                                        confirm: t('messages.confirm_with',item: admin.email),
+                                        answer_yes: t('messages.answer_yes'),
+                                        answer_no: t('messages.answer_no')
+                                    } do %>
                                     <i class="fa fa-times"></i>
                                 <% end %>
                             <% end %>

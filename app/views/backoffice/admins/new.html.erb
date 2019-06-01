@@ -1,1 +1,5 @@
-<%= render partial: 'backoffice/admins/shared/form', locals: {action: 'Novo administrador', is_update: false}%>
+<%= render partial: 'backoffice/admins/shared/form', locals: {
+    action_message: t('messages.new',model: @admin.model_name.human),
+    is_update: false
+    }
+%>
