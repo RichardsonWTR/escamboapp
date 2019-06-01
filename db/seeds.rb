@@ -25,5 +25,6 @@ end
 puts 'Cadastrando as categorias...[DONE]'
 
 puts 'Cadastrando administradores...'
-  Admin.create(email: "master@admins.com",password: "123123", password_confirmation: "123123")
+  Admin.create(email: "master@admins.com",password: "123123", password_confirmation: "123123",
+    name: "Administrador Geral")
 puts 'Cadastrando administradores...[DONE]'
