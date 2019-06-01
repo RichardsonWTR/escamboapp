@@ -22,14 +22,6 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-    password = params[:admin][:password]
-    password_confirmation = params[:admin][:password_confirmation]
-
-    if password.blank? && password_confirmation.blank?
-      params[:admin].delete(:password)
-      params[:admin].delete(:password_confirmation)
-    end
-
     if @admin.update(admin_params)
       redirect_to backoffice_admins_path,notice: "O administrador \"#{@admin.email}\" foi salvo com sucesso"
     else
@@ -55,6 +47,14 @@ class Backoffice::AdminsController < BackofficeController
   private 
 
   def admin_params
+    password = params[:admin][:password]
+    password_confirmation = params[:admin][:password_confirmation]
+
+    if password.blank? && password_confirmation.blank?
+      # The except! command below removes the password keys from the params[:admin] hash.
+      params[:admin].except!(:password, :password_confirmation)
+    end
+
     params.require(:admin).permit(:email, :password,:password_confirmation, :name)
   end
 
