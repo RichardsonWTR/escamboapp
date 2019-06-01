@@ -39,16 +39,16 @@ class Backoffice::AdminsController < BackofficeController
 
   def destroy
     email = @admin.email
-    @admin.destroy
-    if @admin.destroyed?
-      if current_admin.email == email
-        sign_out @admin
-        redirect_to new_admin_session_path
-      else
-        redirect_to backoffice_admins_path, notice: "Administrador excluído com sucesso"
-      end
+    
+    if email == current_admin.email
+      redirect_to backoffice_admins_path, notice: "Você não pode remover seu próprio cadastro"
     else
-      render :index
+      @admin.destroy
+      if @admin.destroyed?
+        redirect_to backoffice_admins_path, notice: "Administrador excluído com sucesso"
+      else
+        redirect_to backoffice_admins_path, notice: "Não foi possível excluír este administrador"
+      end
     end
   end
 
