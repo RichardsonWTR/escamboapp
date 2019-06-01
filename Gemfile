@@ -75,3 +75,6 @@ source 'https://rails-assets.org' do
   # Bootbox.js
   gem 'rails-assets-bootbox', '5.1.3'
 end
+
+# Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
