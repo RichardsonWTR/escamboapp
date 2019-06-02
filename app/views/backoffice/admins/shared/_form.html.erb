@@ -3,7 +3,8 @@
 <% if @admin.errors.any? %>
     <div class="alert alert-danger alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            O administrador não foi salvo porquê:
+            <%# TODO fix this translation later%>
+            <%# O administrador não foi salvo porquê: %>
             <ul>
                 <% @admin.errors.full_messages.each do |error| %>
                     <li><%= error %></li>

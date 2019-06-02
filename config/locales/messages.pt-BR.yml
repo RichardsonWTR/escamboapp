@@ -12,3 +12,4 @@
     wait_a_sec: Um momento!
     answer_yes: Sim
     answer_no: Não
+    non_authorized_action: Você não não pode executar esta ação

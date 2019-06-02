@@ -12,3 +12,4 @@
     wait_a_sec: Wait a second!
     answer_yes: 'Yes'
     answer_no: 'No'
+    non_authorized_action: You are not authorized to perform this action
