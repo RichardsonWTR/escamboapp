@@ -18,7 +18,7 @@
       m: O %{model} foi salvo
       f: A %{model} foi salva
     updated: 
-      m: O %{model} "%{email}" foi atualizado
+      m: O %{model} foi atualizado
       f: A %{model} foi atualizada
     you_cant_remove_yourself: Você não pode remover seu próprio cadastro
     sign_out: Sair
