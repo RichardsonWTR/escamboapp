@@ -34,7 +34,7 @@
                                 <i class="fa fa-edit"></i>
                             <% end %>
 
-                            <% if current_admin.email == admin.email %>
+                            <% if current_admin.email == admin.email or not policy(current_admin).destroy? %>
                                 <%= link_to "#", class: "btn btn-danger btn-circle disabled", disabled: "disabled" do %>
                                     <i class="fa fa-times"></i>
                                 <% end %>

@@ -1,7 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy]
   # Ensures that Pundit authorization and scope are being used
-  after_action :verify_authorized, only: :new
+  after_action :verify_authorized, only: [:new,:destroy]
   after_action :verify_policy_scoped, only: :index
 
   def index
@@ -35,7 +35,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def destroy
     email = @admin.email
-    
+    authorize @admin
     if email == current_admin.email
       redirect_to backoffice_admins_path, notice: t('messages.you_cant_remove_yourself')
     else

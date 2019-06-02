@@ -10,6 +10,10 @@ class AdminPolicy < ApplicationPolicy
     @user.full_access?
   end
 
+  def destroy?
+    @user.full_access?
+  end
+  
   # Provides the parameters for editing an admin
   def permitted_attributes
     if @user.full_access?
