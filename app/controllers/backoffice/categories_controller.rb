@@ -11,7 +11,7 @@ class Backoffice::CategoriesController < BackofficeController
   def create
     @category = CategoryService.create(category_params)
     unless @category.errors.any?
-      redirect_to backoffice_categories_path, notice: "Categoria \"#{@category.description}\" salva com sucesso"
+      redirect_to backoffice_categories_path, notice: t('messages.saved.f',model: @category.model_name.human.downcase)
     else
       render :new
     end
@@ -23,7 +23,7 @@ class Backoffice::CategoriesController < BackofficeController
   def update
     if @category.update_attributes(category_params)
       redirect_to backoffice_categories_path
-      flash[:notice] = "Categoria atualizada com sucesso"
+      flash[:notice] = t('messages.updated.f',model: @category.model_name.human.downcase)
     else
       render :edit
     end

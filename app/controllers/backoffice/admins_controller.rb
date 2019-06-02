@@ -16,7 +16,7 @@ class Backoffice::AdminsController < BackofficeController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
-      redirect_to backoffice_admins_path ,notice: "O administrador \"#{@admin.email}\" foi salvo com sucesso"
+      redirect_to backoffice_admins_path ,notice:  t('messages.saved.m',model: %Q(#{@admin.model_name.human.downcase} "#{@admin.email}"))
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update(admin_params)
-      redirect_to backoffice_admins_path,notice: "O administrador \"#{@admin.email}\" foi salvo com sucesso"
+      redirect_to backoffice_admins_path,notice: t('messages.updated.m',model: %Q(#{@admin.model_name.human.downcase} "#{@admin.email}"))
     else
       render :edit
     end
@@ -37,13 +37,13 @@ class Backoffice::AdminsController < BackofficeController
     email = @admin.email
     
     if email == current_admin.email
-      redirect_to backoffice_admins_path, notice: "Você não pode remover seu próprio cadastro"
+      redirect_to backoffice_admins_path, notice: t('messages.you_cant_remove_yourself')
     else
       @admin.destroy
       if @admin.destroyed?
-        redirect_to backoffice_admins_path, notice: "Administrador excluído com sucesso"
+        redirect_to backoffice_admins_path, notice: t('messages.destroyed_with',model: @admin.model_name.human)
       else
-        redirect_to backoffice_admins_path, notice: "Não foi possível excluír este administrador"
+        redirect_to backoffice_admins_path, notice: t('messages.non_authorized_action')
       end
     end
   end

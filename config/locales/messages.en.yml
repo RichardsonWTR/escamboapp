@@ -9,7 +9,16 @@
     created: Item created succesfully!
     updated: Item updated succesfully!
     destroyed: Item deleted succesfully!
+    destroyed_with: "%{model} deleted succesfully!"
     wait_a_sec: Wait a second!
     answer_yes: 'Yes'
     answer_no: 'No'
     non_authorized_action: You are not authorized to perform this action
+    saved:
+      m: The %{model} has been saved
+      f: The %{model} has been saved
+    updated: 
+      m: The %{model} has been updated
+      f: The %{model} has been updated
+    you_cant_remove_yourself: You can't remove your own registry
+    sign_out: Sign out
