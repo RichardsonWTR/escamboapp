@@ -51,4 +51,8 @@ Rails.application.configure do
   $stdout.sync = true
   # Allow the output of the console
   config.web_console.whitelisted_ips = '10.0.2.2'
+
+  # MailCatcher configurations 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

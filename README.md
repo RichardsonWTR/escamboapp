@@ -18,3 +18,9 @@ If you want to be updated, stay tuned in the Releases tab.
 
 ## Contribute
 If you find an issue or typo somewhere, please let me know and open an issue.
+
+
+## To get up and running
+
+* Development environment 
+    * Install [MailCatcher](https://mailcatcher.me/) with `gem install mailcatcher`

@@ -57,6 +57,10 @@ group :development do
 
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+  # The official site asks to not include mailcacther in the Gemfile, but I'll put it here for now
+  # TODO remove mailcather from gemfile
+  gem 'mailcatcher'
 end
 
 # Flexible authentication solution for Rails with Warden. 

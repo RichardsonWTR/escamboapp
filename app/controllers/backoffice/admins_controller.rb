@@ -27,6 +27,8 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update(admin_params)
+      # TODO use deliver_later to avoid freezing problems
+      AdminMailer.update_email(current_admin, @admin).deliver_now
       redirect_to backoffice_admins_path,notice: t('messages.updated.m',model: %Q(#{@admin.model_name.human.downcase} "#{@admin.email}"))
     else
       render :edit
