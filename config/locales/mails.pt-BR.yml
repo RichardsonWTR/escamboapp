@@ -1,0 +1,5 @@
+'pt-BR':
+  mails:
+    admin:
+      updated_by: Seus dados foram atualizados por
+      subject: Seus dados de cadastro foram atualizados

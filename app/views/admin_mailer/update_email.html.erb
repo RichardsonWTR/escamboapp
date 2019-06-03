@@ -1,2 +1,2 @@
 <h1><%= @admin.name %>, </h1>
-<p>Seus dados foram atualizados por <%= @current_admin.name %>.</p>
+<p><%= %Q(#{t('mails.admin.updated_by')} #{@current_admin.name}. ) %></p>

@@ -5,7 +5,7 @@ class AdminMailer < ApplicationMailer
     # TODO use another email layout when the user is changing his own registry
     @admin = admin
     @current_admin = current_admin
-    mail(to:admin.email, subject: 'Seus dados foram alterados!')
+    mail(to:admin.email, subject: t('mails.admin.subject'))
   end
 
 end
