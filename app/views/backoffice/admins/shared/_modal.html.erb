@@ -9,15 +9,15 @@
       <div class="modal-body">
           <div class="form-group">
             <label for="recipient-text" class="control-label">Recipient:</label>
-            <%= email_field 'send_mail', 'recipient-text', id: 'recipient-text',class: 'form-control',readonly:'readonly'%>
+            <%= email_field 'send_mail', 'recipient-text', id: 'recipient-text',class: 'form-control',readonly:'readonly',required: 'required'%>
           </div>
           <div class="form-group">
             <label for="subject-text" class="control-label">Subject:</label>
-            <%= text_field 'send_mail', 'subject-text', id:'subject-text', class: 'form-control'%>
+            <%= text_field 'send_mail', 'subject-text', id:'subject-text', class: 'form-control',required:'required'%>
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">Message:</label>
-            <%= text_area 'send_mail', 'message-text', id: 'message-text', class:'form-control'%>
+            <%= text_area 'send_mail', 'message-text', id: 'message-text', class:'form-control',required: 'required'%>
           </div>
       </div>
       <div class="modal-footer">

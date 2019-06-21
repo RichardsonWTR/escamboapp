@@ -10,5 +10,5 @@ $(function(){
     txtSubjectEl.val('');
     h4Message.html('');
     txtMessageEl.val('');
-    $.notify('E-mail sent!','success');
+    $.notify('<%= @notify_message %>','<%= @notify_flag %>');
 });

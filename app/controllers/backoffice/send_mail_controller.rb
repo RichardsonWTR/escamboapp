@@ -3,7 +3,15 @@ class Backoffice::SendMailController < ApplicationController
   # POST /backoffice/sendmail
   def send_mail
     @mail_params = set_params_send_mail
-    AdminMailer.message_mail(current_admin,@mail_params).deliver_now
+    begin
+      AdminMailer.message_mail(current_admin,@mail_params).deliver_now
+      @notify_flag = 'success'
+      @notify_message = 'E-mail enviado com sucesso'
+    rescue
+      # TODO log error somewhere
+      @notify_flag = 'error'
+      @notify_message = 'Erro ao enviar e-mail'
+    end
   end
 
   # Retrieves the e-mail from the provided user
