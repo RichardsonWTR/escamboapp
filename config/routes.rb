@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :admins, except: [:show]
     get 'categories', to: 'categories#index'
     get 'admins', to: 'admins#index'
+    post 'sendmail', to: 'send_mail#send_mail', as: 'send_mail'
+    get 'sendmail/:id', to: 'send_mail#get_user_mail_data', as: 'get_user_mail_data'
   end
 
   namespace :site do

@@ -8,4 +8,13 @@ class AdminMailer < ApplicationMailer
     mail(to:admin.email, subject: t('mails.admin.subject'))
   end
 
+  # Send the e-mail typed by the user in the Admins list
+  def message_mail(current_admin,params)
+    @current_admin = current_admin
+    @recipient = params['recipient-text']
+    @subject = params['subject-text']
+    @message = params['message-text']
+    mail(to: @recipient, subject: @subject)
+  end
+
 end

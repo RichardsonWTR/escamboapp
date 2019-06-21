@@ -3,24 +3,28 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="mailModal">New message</h4>
+        <h4 class="modal-title">New message</h4>
       </div>
+      <%= form_tag backoffice_send_mail_path, remote: true do %>
       <div class="modal-body">
-        <form>
           <div class="form-group">
-            <label for="recipient-name" class="control-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-text" class="control-label">Recipient:</label>
+            <%= email_field 'send_mail', 'recipient-text', id: 'recipient-text',class: 'form-control',readonly:'readonly'%>
+          </div>
+          <div class="form-group">
+            <label for="subject-text" class="control-label">Subject:</label>
+            <%= text_field 'send_mail', 'subject-text', id:'subject-text', class: 'form-control'%>
           </div>
           <div class="form-group">
             <label for="message-text" class="control-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <%= text_area 'send_mail', 'message-text', id: 'message-text', class:'form-control'%>
           </div>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <%= submit_tag 'Send message',class: 'btn btn-primary'%>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

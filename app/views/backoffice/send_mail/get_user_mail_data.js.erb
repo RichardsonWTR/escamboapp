@@ -1,0 +1,14 @@
+$(function(){
+    let mailModalEl = $('#mailModal');
+    let txtSubjectEl = $('#subject-text');
+    let txtMessageEl = $('#message-text');
+    let h4Message = $('#mailModal .modal-title')
+    $('#recipient-text').val('<%= @admin.email %>')
+    
+    mailModalEl.modal('show');
+    h4Message.html('Mensagem para <%= @admin.name %>')
+    mailModalEl.on('shown.bs.modal', function () {
+        txtSubjectEl.focus()
+      })
+      
+});

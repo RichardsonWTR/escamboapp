@@ -1,0 +1,14 @@
+$(function(){
+    let mailModalEl = $('#mailModal');
+    let txtMessageEl = $('#message-text');
+    let txtSubjectEl = $('#subject-text');
+    let h4Message = $('#mailModal .modal-title')
+    
+    mailModalEl.modal('hide');
+    
+    $('#recipient-text').val('')
+    txtSubjectEl.val('');
+    h4Message.html('');
+    txtMessageEl.val('');
+    $.notify('E-mail sent!','success');
+});
